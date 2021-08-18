@@ -1,0 +1,48 @@
+.homeTitle {
+    color: #00AFC7;
+    text-align: center;
+}
+
+.marginAndShadowH {
+    margin: 0;
+    text-shadow: 5px 5px 15px #40bd24;
+}
+
+.homeTitle h1 {
+    font-size: 6em;
+}
+
+.homeTitle h3 {
+    padding-top: 1%;
+    font-size: 3em;
+}
+
+.homeParagraph {
+    margin-top: 5%;
+    color: white;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5em;
+}
+
+.homeParagraph p {
+    width: 50%;
+    margin: 0.5% auto 0.5% auto;
+}
+
+.homePlayButton {
+    margin-top: 5%;
+}
+
+.homePlayButton button{
+    margin: 0 auto;
+    display: block;
+    background-color: #00AFC7;
+    font-size: 2em;
+    color: white;
+    padding: 0.5% 1.5% 0.5% 1.5%;
+}
+
+.animate__animated.animate__fadeIn {
+    --animate-duration: 3s;
+}

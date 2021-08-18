@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "GetSchwifty";
+    src: local("GetSchwifty"),url('../../fonts/get_schwifty.ttf') format("truetype");
+}
+
+.ram-font {
+    font-family: "GetSchwifty";
+}

@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+}
+
+.background-img {
+    background: url('../../images/homeBackground.png') no-repeat center center; 
+    height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.homeHelpMeButton {
+    height: 10%;
+}
+
+.btn {
+    cursor: pointer;
+    border-radius: 15%;
+}
+
+.btn:hover {
+    transform:scale(1.1,1.1);
+    -webkit-transform:scale(1.1,1.1);
+    -moz-transform:scale(1.1,1.1);
+    transition: 0.5s ease-in-out;
+}
+
+.homeHelpMeButton button{
+    float: right;
+    border: 2px solid white;
+    background-color: transparent;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    margin: 2% 2% 0 0;
+    padding: 0.5%;
+}
+  
