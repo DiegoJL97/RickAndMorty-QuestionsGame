@@ -19,6 +19,10 @@ class Questions extends React.Component {
     }
 
     async componentDidMount(){
+        await this.generateCharacterAndQuestion();
+    }
+
+    generateCharacterAndQuestion = async () => {
         await this.fetchCharacter();
         await this.generateQuestion();
     }
@@ -32,7 +36,7 @@ class Questions extends React.Component {
     fetchCharacter = async () => {
         try {
             let randomId = this.generateRandomNumber(671);
-            let res = await fetch(url+randomId);
+            let res = await fetch(url+'character/'+randomId);
             let data = await res.json();
             this.setState({
                 name: data.name,
@@ -57,7 +61,7 @@ class Questions extends React.Component {
                 }) 
                 let options = []
                 for (let i = 0; i < 2; i++) {
-                    let res = await fetch(url+this.generateRandomNumber(671));
+                    let res = await fetch(url+'/character/'+this.generateRandomNumber(671));
                     let data = await res.json();
                     options.push(data.name)
                 }
@@ -69,22 +73,61 @@ class Questions extends React.Component {
                 break;
             case 2: 
                 this.setState({
-                    question: 'Is '+name+' alive, dead, or unknown?'
+                    question: 'Is '+name+' alive, dead, or unknown?',
+                    correctAnswer: this.state.status,
+                    options: this.shuffleArray(['Dead','Alive','Unknwon'])
                 })
                 break;
             case 3:
                 this.setState({
                     question: 'What kind of species does '+name+' belong to?'
                 })
+                let optionsSpecies = [];
+                optionsSpecies.push(this.state.species);
+                let i = 0;
+                while(i<2) {
+                    let res = await fetch(url+'/character/'+this.generateRandomNumber(671));
+                    let data = await res.json();
+                    if(!optionsSpecies.includes(data.name)){
+                        optionsSpecies.push(data.name)
+                    }
+                    i++;
+                }
+                this.setState({
+                    options: this.shuffleArray(optionsSpecies),
+                    correctAnswer: this.state.species
+                })
                 break;
             case 4:
                 this.setState({
                     question: 'Where did '+name+' come from?'
                 })
+                let optionsLocations = []
+                for (let i = 0; i < 2; i++) {
+                    let res = await fetch(url+'/location/'+this.generateRandomNumber(108));
+                    let data = await res.json();
+                    optionsLocations.push(data.name)
+                }
+                optionsLocations.push(this.state.origin);
+                this.setState({
+                    options: this.shuffleArray(optionsLocations),
+                    correctAnswer: this.state.origin
+                })
                 break;
             case 5:
                 this.setState({
                     question: 'Where was '+name+' last seen?'
+                })
+                let optionsLastSeen = []
+                for (let i = 0; i < 2; i++) {
+                    let res = await fetch(url+'/location/'+this.generateRandomNumber(108));
+                    let data = await res.json();
+                    optionsLastSeen.push(data.name)
+                }
+                optionsLastSeen.push(this.state.location);
+                this.setState({
+                    options: this.shuffleArray(optionsLastSeen),
+                    correctAnswer: this.state.location
                 })
                 break;
             default:
@@ -102,18 +145,27 @@ class Questions extends React.Component {
         return array;
     }
 
+    checkQuestion = (value) => {
+        if(value === this.state.correctAnswer) {
+            let updatedScore = this.state.score + 1;
+            this.setState({
+                score: updatedScore
+            })
+            this.generateCharacterAndQuestion();
+        } else {
+            //Redirección a Score page
+        }
+    }
+
     render(){
         return (
             <div className="questionsBackground">
                 <QuestionsInfo
-                    name={this.state.name}
-                    status={this.state.status}
-                    species={this.state.species}
-                    origin={this.state.origin}
-                    location={this.state.location}
                     image={this.state.image}
                     question={this.state.question}
                     options={this.state.options}
+                    score={this.state.score}
+                    checkQuestion={this.checkQuestion}
                 >
                 </QuestionsInfo>
             </div>

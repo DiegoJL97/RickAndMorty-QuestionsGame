@@ -4,12 +4,11 @@ import '../components/styles/questionsInfo.css'
 
 class QuestionsInfo extends React.Component {
 
-
     render(){
         return (
             <React.Fragment>
                 <div className="score">
-                    <p>Score: 0</p>
+                    <p>Score: {this.props.score}</p>
                 </div>
                 <div className="topTitle">
                     <Title></Title> 
@@ -27,7 +26,9 @@ class QuestionsInfo extends React.Component {
                         this.props.options.map((option) => {
                             return(
                                 <div className="questionsButtonOption float" key={option}>
-                                    <button className="ram-font btn" value={option}>{option}</button>
+                                    <button className="ram-font btn" value={option} onClick={ () => this.props.checkQuestion(option)}>
+                                        {option}
+                                    </button>
                                 </div>
                             )
                         })
