@@ -30,12 +30,13 @@
     margin: 0.5% auto 0.5% auto;
 }
 
-.homePlayButton {
-    margin-top: 5%;
+.homePlayButton a {
+    text-decoration: none;
 }
 
 .homePlayButton button{
     margin: 0 auto;
+    margin-top: 5%;
     display: block;
     background-color: #00AFC7;
     font-size: 2em;

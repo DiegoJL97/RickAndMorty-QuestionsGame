@@ -1,0 +1,8 @@
+.questionsBackground {
+    background: url('../../images/questionsBackground.png') no-repeat center center; 
+    height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
