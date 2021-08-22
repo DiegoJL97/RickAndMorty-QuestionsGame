@@ -1,0 +1,23 @@
+.backgroundKOS {
+    background: url('../../images/0-3.gif') no-repeat center center;
+}
+
+.backgroundLookRick {
+    background: url('../../images/3-7.gif') no-repeat center center;
+}
+
+.backgroundDance1 {
+    background: url('../../images/7-15.gif') no-repeat center center;
+}
+
+.backgroundDance2 {
+    background: url('../../images/15+.gif') no-repeat center center;
+}  
+
+.background {
+    height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

@@ -1,12 +1,14 @@
-import React from 'react';
-import QuestionsInfo from '../components/questionsInfo';
+import React from 'react'
+import QuestionsInfo from '../components/questionsInfo'
 import '../components/styles/questions.css'
 import url from '../config'
+import Loading from '../components/loading'
 
 class Questions extends React.Component {
 
     state = {
         score: 0,
+        loading: true,
         name: '',
         status: '',
         species: '',
@@ -25,6 +27,9 @@ class Questions extends React.Component {
     generateCharacterAndQuestion = async () => {
         await this.fetchCharacter();
         await this.generateQuestion();
+        this.setState({
+            loading: false
+        })
     }
 
     generateRandomNumber = (maxNumber) => {
@@ -154,10 +159,17 @@ class Questions extends React.Component {
             this.generateCharacterAndQuestion();
         } else {
             //Redirección a Score page
+            this.props.history.push({
+                pathname: '/score',
+                state: { score: this.state.score }
+            })
         }
     }
 
     render(){
+        if(this.state.loading){
+            return <Loading/> 
+        }
         return (
             <div className="questionsBackground">
                 <QuestionsInfo
