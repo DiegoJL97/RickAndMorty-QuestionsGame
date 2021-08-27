@@ -6,7 +6,7 @@ import Title from '../components/title'
 
 const HomeInfo = () => (
     <div className="homeInfo">
-        <Title></Title>
+        <Title class="top"></Title>
         <div className="homeParagraph animate__animated animate__fadeIn">
             <p >Wubba lubba dub dub!</p>
             <p>Do you think you know a lot about Rick and Morty? Test yourself and find out how many questions in a row you can answer</p>

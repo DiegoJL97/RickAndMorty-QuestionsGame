@@ -9,17 +9,17 @@ class ScoreInfo extends React.Component {
 
     componentDidMount() {
         let phrase = '';
-        if(this.props.score <= 3){
-            phrase = 'El resultado es menor o igual a 3';
+        if(this.props.score <= 2){
+            phrase = 'Come on, is that all you got? Try again and try not to embarrass yourself';
         }
-        if(this.props.score > 3 && this.props.score <= 7) {
-            phrase = 'El resultado está entre 3 y 7';
+        if(this.props.score > 2 && this.props.score <= 5) {
+            phrase = "Well... I have to admit it's not a bad score, but I bet you can do even better";
         }
-        if(this.props.score > 7 && this.props.score <= 15) { 
-            phrase = 'El resultado está entre 7 y 15';
+        if(this.props.score > 5 && this.props.score <= 10) { 
+            phrase = "Wubba lubba dub dub! That's a great score, very few people come this far";
         }
-        if(this.props.score > 15) {
-            phrase = 'El resultado es mayor de 15';
+        if(this.props.score > 10) {
+            phrase = 'Congratulations! You are top at this game!';
         }
         this.setState({
             phrase: phrase

@@ -57,8 +57,15 @@
     margin: 0 auto;
     margin-top: 10%;
     display: block;
-    background-color: #00AFC7;
     font-size: 1.5em;
     color: white;
     padding: 1% 2% 1% 2%;
+}
+
+.questionsButton {
+    background-color: #00AFC7;
+}
+
+.backgroundGreen {
+    background-color: green;
 }

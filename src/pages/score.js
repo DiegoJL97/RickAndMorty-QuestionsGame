@@ -17,28 +17,28 @@ class Score extends React.Component {
     }
 
     render() {
-        if(this.props.location.state.score <= 3){
+        if(this.props.location.state.score <= 2){
             return (
                 <div className="backgroundKOS background">
                     <ScoreInfo score={this.props.location.state.score} redirectMenu={this.redirectMenu} redirectQuestions={this.redirectQuestions}></ScoreInfo>
                 </div>
             )  
         }
-        if(this.props.location.state.score > 3 && this.props.location.state.score <= 7){
+        if(this.props.location.state.score > 2 && this.props.location.state.score <= 5){
             return (
                 <div className="backgroundLookRick background">
                     <ScoreInfo score={this.props.location.state.score} redirectMenu={this.redirectMenu} redirectQuestions={this.redirectQuestions}></ScoreInfo>
                 </div> 
             )
         }
-        if(this.props.location.state.score > 7 && this.props.location.state.score <= 15){
+        if(this.props.location.state.score > 5 && this.props.location.state.score <= 10){
             return (
                 <div className="backgroundDance1 background">
                     <ScoreInfo score={this.props.location.state.score} redirectMenu={this.redirectMenu} redirectQuestions={this.redirectQuestions}></ScoreInfo>
                 </div> 
             )  
         }
-        if(this.props.location.state.score > 15){
+        if(this.props.location.state.score > 10){
             return (
                 <div className="backgroundDance2 background">
                     <ScoreInfo score={this.props.location.state.score} redirectMenu={this.redirectMenu} redirectQuestions={this.redirectQuestions}></ScoreInfo>

@@ -14,23 +14,33 @@ class QuestionsInfo extends React.Component {
                     <Title></Title> 
                 </div>
                 <div className="questionsRow float">
-                    <div className="characterImg questionsBox float animate__animated animate__bounceInDown">
+                    <div className="characterImg questionsBox float">
                         <img src={this.props.image} alt="character"></img>
                     </div>
-                    <div className="questionsParagraph questionsBox float animate__animated animate__bounceInDown">
+                    <div className="questionsParagraph questionsBox float">
                         <p>{this.props.question}</p>
                     </div>
                 </div>
                 <div className="questionsRow float">
                     {
                         this.props.options.map((option) => {
-                            return(
-                                <div className="questionsButtonOption float animate__animated animate__fadeIn" key={option}>
-                                    <button className="ram-font btn" value={option} onClick={ () => this.props.checkQuestion(option)}>
-                                        {option}
-                                    </button>
-                                </div>
-                            )
+                            if(option === this.props.correctAnswer && this.props.correctAnswerClicked){
+                                return (
+                                    <div className="questionsButtonOption float" key={option}>
+                                        <button className="ram-font btn backgroundGreen" value={option} onClick={ () => this.props.checkQuestion(option)}>
+                                            {option}
+                                        </button>
+                                    </div>
+                                )
+                            } else {
+                                return(
+                                    <div className="questionsButtonOption float" key={option}>
+                                        <button className="ram-font btn questionsButton" value={option} onClick={ () => this.props.checkQuestion(option)}>
+                                            {option}
+                                        </button>
+                                    </div>
+                                )
+                            }
                         })
                     }
                 </div>

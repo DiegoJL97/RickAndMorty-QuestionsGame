@@ -17,7 +17,8 @@ class Questions extends React.Component {
         image: '',
         question: '',
         options: [],
-        correctAnswer: ''
+        correctAnswer: '',
+        correctAnswerClicked: false
     }
 
     async componentDidMount(){
@@ -152,13 +153,19 @@ class Questions extends React.Component {
 
     checkQuestion = (value) => {
         if(value === this.state.correctAnswer) {
-            let updatedScore = this.state.score + 1;
+            //Mostrar en color verde el resultado
             this.setState({
-                score: updatedScore
+                correctAnswerClicked: true
             })
-            this.generateCharacterAndQuestion();
+            setTimeout(() => {
+                let updatedScore = this.state.score + 1;
+                this.setState({
+                    score: updatedScore,
+                    correctAnswerClicked: false
+                });
+                this.generateCharacterAndQuestion()
+            }, 1000);
         } else {
-            //Redirección a Score page
             this.props.history.push({
                 pathname: '/score',
                 state: { score: this.state.score }
@@ -177,6 +184,8 @@ class Questions extends React.Component {
                     question={this.state.question}
                     options={this.state.options}
                     score={this.state.score}
+                    correctAnswerClicked={this.state.correctAnswerClicked}
+                    correctAnswer={this.state.correctAnswer}
                     checkQuestion={this.checkQuestion}
                 >
                 </QuestionsInfo>
