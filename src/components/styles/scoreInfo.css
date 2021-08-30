@@ -53,3 +53,46 @@
     float: left;
     margin-left: 5%;
 }
+
+/* TABLETS */
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+
+    .showScore {
+        margin-top: 15%;
+    }
+
+    .showScore h1 {
+        font-size: 3em;
+    }
+
+    .showPhrase p {
+        font-size: 1.5em;
+    }
+
+    .scoreMenuBox button {
+        font-size: 1.2em;
+        padding: 1% 2% 1% 2%;
+    }
+}
+
+/* PHONE */
+@media only screen and (max-width: 600px) {
+
+    .showScore {
+        margin-top: 20%;
+    }
+
+    .showScore h1 {
+        font-size: 2em;
+    }
+
+    .showPhrase p {
+        font-size: 1.2em;
+    }
+
+    .scoreMenuBox button {
+        font-size: 1em;
+        padding: 1% 4% 1% 4%;
+    }
+
+}

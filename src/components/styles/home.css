@@ -42,4 +42,18 @@ body{
 .homePaddingTop {
     padding-top: 4%;
 }
+
+/* TABLETS */
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+    .homePaddingTop {
+        padding-top: 10%;
+    }
+}
+
+/* PHONE */
+@media only screen and (max-width: 600px) {
+    .homePaddingTop {
+        padding-top: 20%;
+    }
+}
   
