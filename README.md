@@ -12,15 +12,15 @@ The following images show the screens of the web application:
 
 **Home page**
 
-![Home Page](../screenshots/homePage.png?raw=true "Home Page")
+![Home Page](https://github.com/DiegoJL97/RickAndMorty-QuestionsGame/blob/master/screenshots/homePage.png)
 
 **Questions page**
 
-![Questions Page](../screenshots/questionsPage.jpg?raw=true "Questions Page")
+![Questions Page](https://github.com/DiegoJL97/RickAndMorty-QuestionsGame/blob/master/screenshots/questionsPage)
 
 **Score page**
 
-![Score Page](../screenshots/scorePage.jpg?raw=true "Score Page")
+![Score Page](https://github.com/DiegoJL97/RickAndMorty-QuestionsGame/blob/master/screenshots/scorePage.jpg)
 
 ## Technologies
 
